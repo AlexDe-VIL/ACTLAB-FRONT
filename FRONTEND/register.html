@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Registrar Cuenta - ACT Clínica</title>
+  <link rel="stylesheet" href="Assets/StyleRegister.css">  <!-- Enlace al archivo CSS -->
+</head>
+<body>
+    <!-- Barra de navegación -->
+    <header>
+      <nav>
+        <ul>
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="#">Ayuda</a></li>
+          <li><a href="#">Contacto</a></li>
+          <li><a href="#">Nosotros</a></li>
+        </ul>
+      </nav>
+    </header>
+  <div class="container">
+    <!-- Formulario de registro -->
+    <div class="register-form">
+      <h2>Iniciar sesión</h2>
+      <h3>Crear una cuenta</h3>
+      <form>
+        <label for="doc-type">Tipo de documento *</label>
+        <select id="doc-type" name="doc-type" required>
+          <option value="dni">DNI</option>
+          <option value="pasaporte">Pasaporte</option>
+        </select>
+
+        <label for="doc-number">Número de documento *</label>
+        <input type="text" id="doc-number" name="doc-number" placeholder="Número de documento" required>
+
+        <label for="dni-date">Fecha de emisión del DNI *</label>
+        <input type="date" id="dni-date" name="dni-date" required>
+
+        <div class="age-group">
+          <label>
+            <input type="radio" name="age" value="mayor" required> Soy mayor de edad
+          </label>
+          <label>
+            <input type="radio" name="age" value="menor" required> Soy menor de edad
+          </label>
+        </div>
+
+        <button type="submit">Continuar</button>
+      </form>
+
+      <p><a href="#">Recuperar contraseña</a></p>
+      <p>¿Ya tienes cuenta? <a href="login.html">Iniciar sesión</a></p>
+    </div>
+
+    <!-- Pie de página -->
+    <footer>
+      <p>&copy; 2025 ACT Clínica | Todos los derechos reservados</p>
+    </footer>
+  </div>
+  
+  <script src="Scripts/Main.js"></script>
+</body>
+</html>

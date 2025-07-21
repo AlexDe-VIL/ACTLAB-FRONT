@@ -1,0 +1,131 @@
+/* Reset and basic styling */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #F0F8FF;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;  /* Asegura que el body ocupe al menos el alto completo de la pantalla */
+}
+
+/* Header styles */
+header {
+  background-color: #E0F7FF;
+  padding: 20px;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+nav .logo h1 {
+  font-size: 2rem;
+  color: #0073E6;
+}
+
+nav .menu {
+  list-style-type: none;
+  display: flex;
+}
+
+nav .menu li {
+  margin-left: 20px;
+}
+
+nav .menu li a {
+  text-decoration: none;
+  color: #0073E6;
+  font-size: 1rem;
+}
+
+/* Main content styles */
+main {
+  text-align: center;
+  padding: 50px 20px;
+  flex-grow: 1; /* Permite que el contenido crezca para ocupar el espacio disponible */
+}
+
+.welcome-section {
+  margin-bottom: 40px;
+}
+
+.welcome-section h2 {
+  font-size: 3rem;
+  color: #0073E6;
+}
+
+.welcome-section p {
+  font-size: 1.2rem;
+  color: #333;
+}
+
+.btn-entrar {
+  background-color: #0073E6;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+/* Services section styles */
+.services {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  justify-items: center;
+}
+
+.service-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.circle {
+  width: 80px;
+  height: 80px;
+  background-color: #0073E6;
+  border-radius: 50%;
+  margin-bottom: 10px;
+}
+
+.service-item p {
+  font-size: 1rem;
+  color: #333;
+}
+
+/* Agenda button */
+.agenda {
+  grid-column: span 4;
+  margin-top: 20px;
+}
+
+.btn-agendar {
+  background-color: #0073E6;
+  color: white;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 5px;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+/* Footer styles */
+footer {
+  text-align: center;
+  padding: 20px;
+  background-color: #0073E6;
+  margin-top: 40px;
+  font-size: 0.9rem;
+  color: #E0F7FF;
+  margin-top: auto; /* Asegura que el pie de página se mueva hacia el fondo */
+}

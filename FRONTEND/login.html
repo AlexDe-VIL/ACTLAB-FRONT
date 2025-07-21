@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Iniciar sesión - ACT Clínica</title>
+  <link rel="stylesheet" href="Assets/StyleLogin.css">  <!-- Enlace al archivo CSS -->
+</head>
+<body>
+  <!-- Barra de navegación (encabezado) -->
+  <header>
+    <nav>
+      <ul>
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="#">Ayuda</a></li>
+        <li><a href="#">Contacto</a></li>
+        <li><a href="#">Nosotros</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <div class="container">
+    <!-- Formulario de login -->
+    <div class="login-form">
+      <h2>Iniciar sesión</h2>
+      <h3>Accede a tu cuenta</h3>
+      <form>
+        <label for="doc-type">Tipo de documento *</label>
+        <select id="doc-type" name="doc-type" required>
+          <option value="dni">DNI</option>
+          <option value="pasaporte">Pasaporte</option>
+        </select>
+
+        <label for="doc-number">Número de documento *</label>
+        <input type="text" id="doc-number" name="doc-number" placeholder="Número de documento" required>
+
+        <label for="password">Contraseña *</label>
+        <input type="password" id="password" name="password" placeholder="Contraseña" required>
+
+        <label>
+          <input type="checkbox" id="remember"> Recordar
+        </label>
+
+        <button type="submit" id="submit-btn">Ingresar</button>
+      </form>
+
+      <p><a href="#">Recuperar contraseña</a></p>
+      <p>¿No tienes cuenta? <a href="register.html">Crear una cuenta</a></p>
+    </div>
+  </div>
+
+  <!-- Pie de página -->
+  <footer>
+    <p>&copy; 2025 ACT Clínica | Todos los derechos reservados</p>
+  </footer>
+
+  <script src="Scripts/Main.js"></script>
+</body>
+</html>
