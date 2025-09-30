@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Visualizar Resultados - ACT Clínica</title>
+    <link rel="stylesheet" href="Assets/StyleResultadoLab.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-content">
+            <h1 class="logo">ACT Clínica</h1>
+            <nav class="nav">
+                <a href="index.html">Inicio</a>
+                <a href="#">Ayuda</a>
+                <a href="#">Contacto</a>
+                <a href="#">Nosotros</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="container-full">
+            <div class="viewer-header">
+                <h2 class="page-title">Visualizar Resultados</h2>
+                <div class="viewer-actions">
+                    <button class="btn-icon" onclick="downloadPDF()" title="Descargar PDF">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/>
+                        </svg>
+                        Descargar
+                    </button>
+                    <button class="btn-icon" onclick="printPDF()" title="Imprimir PDF">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z"/>
+                        </svg>
+                        Imprimir
+                    </button>
+                </div>
+            </div>
+
+            <!-- PDF Viewer Card -->
+            <div class="pdf-viewer-card">
+                <!-- Loading State -->
+                <div id="pdfLoading" class="pdf-loading">
+                    <div class="spinner"></div>
+                    <p>Cargando documento...</p>
+                </div>
+
+                <!-- Error State -->
+                <div id="pdfError" class="pdf-error" style="display: none;">
+                    <svg class="icon-error" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                        <circle cx="12" cy="12" r="10" stroke-width="2"/>
+                        <line x1="15" y1="9" x2="9" y2="15" stroke-width="2" stroke-linecap="round"/>
+                        <line x1="9" y1="9" x2="15" y2="15" stroke-width="2" stroke-linecap="round"/>
+                    </svg>
+                    <h3>Error al Cargar el Documento</h3>
+                    <p id="pdfErrorMessage">No se pudo cargar el archivo PDF. Por favor, intente nuevamente.</p>
+                    <button class="btn-primary" onclick="retryLoadPDF()">Reintentar</button>
+                </div>
+
+                <!-- PDF Viewer -->
+                <div id="pdfViewerContainer" class="pdf-viewer-container" style="display: none;">
+                    <iframe id="pdfViewer" class="pdf-viewer" frameborder="0"></iframe>
+                </div>
+            </div>
+
+            <!-- Botón Volver -->
+            <div class="actions">
+                <button class="btn-secondary" onclick="window.location.href='resultados.html'">
+                    Volver a Resultados
+                </button>
+            </div>
+        </div>
+    </main>
+
+    <!-- Modal de Información -->
+    <div id="infoModal" class="modal">
+        <div class="modal-content info-modal">
+            <div class="modal-icon info-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                    <circle cx="12" cy="12" r="10" stroke-width="2"/>
+                    <line x1="12" y1="16" x2="12" y2="12" stroke-width="2" stroke-linecap="round"/>
+                    <line x1="12" y1="8" x2="12.01" y2="8" stroke-width="2" stroke-linecap="round"/>
+                </svg>
+            </div>
+            <h3 id="infoTitle">Información</h3>
+            <p id="infoMessage"></p>
+            <button class="btn-primary" onclick="closeInfoModal()">Aceptar</button>
+        </div>
+    </div>
+
+    <script src="Scripts/VisualizarResultado.js"></script>
+</body>
+</html>

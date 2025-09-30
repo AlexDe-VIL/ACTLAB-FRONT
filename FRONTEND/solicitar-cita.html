@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Solicitar Cita - ACT Clínica</title>
+  <link rel="stylesheet" href="Assets/StyleSolicitarCita.css">
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <nav>
+      <div class="logo">
+        <h1>ACT Clínica</h1>
+      </div>
+      <ul class="menu">
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="#">Ayuda</a></li>
+        <li><a href="#">Contacto</a></li>
+        <li><a href="#">Nosotros</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  
+
+  <!-- Main Content -->
+  <main>
+    <div class="container">
+      <div class="form-card">
+        <h2>Ingrese los Datos de la Cita</h2>
+        
+        <form id="appointment-form">
+          <div class="form-row">
+            <div class="form-group">
+              <label for="especialidad">Especialidad</label>
+              <select id="especialidad" name="especialidad" required>
+                <option value="">Seleccione una Especialidad</option>
+                <option value="hematologia">Hematología</option>
+                <option value="bioquimica">Bioquímica</option>
+                <option value="inmunologia">Inmunología</option>
+                <option value="endocrinologia">Endocrinología</option>
+                <option value="urinalisis">Urinálisis</option>
+                <option value="oncologia">Oncología</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="fecha-cita">Fecha de Cita</label>
+              <input type="date" id="fecha-cita" name="fecha-cita" required>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="horarios">Horarios</label>
+            <select id="horarios" name="horarios" required>
+              <option value="">Seleccione un horario</option>
+              <option value="8:00-9:30">8:00 - 9:30 am</option>
+              <option value="10:30-11:00">10:30 - 11:00 am</option>
+              <option value="12:00-1:00">12:00 - 1:00 pm</option>
+              <option value="2:00-3:30">2:00 - 3:30 pm</option>
+              <option value="4:00-5:30">4:00 - 5:30 pm</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="motivo-cita">Motivo de la Cita</label>
+            <textarea id="motivo-cita" name="motivo-cita" rows="6" placeholder="Describa el motivo de su cita médica. Incluya síntomas relevantes, medicamentos actuales o cualquier información que considere importante para su atención." required></textarea>
+          </div>
+
+          <button type="submit" class="btn-solicitar">Solicitar Cita</button>
+        </form>
+      </div>
+    </div>
+  </main>
+
+  <!-- Modal de Confirmación -->
+  <div id="modal-confirmacion" class="modal">
+    <div class="modal-content success">
+      <div class="modal-icon success-icon">
+        <svg width="60" height="60" viewBox="0 0 60 60" fill="none">
+          <circle cx="30" cy="30" r="30" fill="#4CAF50"/>
+          <path d="M20 30L26 36L40 22" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </div>
+      <h3>Solicitud Enviada</h3>
+      <p>Correo Enviado con Éxito</p>
+      <button class="btn-modal" onclick="cerrarModal()">Siguiente</button>
+    </div>
+  </div>
+
+  <!-- Modal de Error -->
+  <div id="modal-error" class="modal">
+    <div class="modal-content error">
+      <div class="modal-icon error-icon">
+        <svg width="60" height="60" viewBox="0 0 60 60" fill="none">
+          <circle cx="30" cy="30" r="30" fill="#F44336"/>
+          <path d="M22 22L38 38M38 22L22 38" stroke="white" stroke-width="3" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <h3>Horario No Disponible</h3>
+      <p>Solicitud no Registrada</p>
+      <button class="btn-modal" onclick="verHorarios()">Ver Horarios</button>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2025 ACT Clínica | Todos los derechos reservados</p>
+  </footer>
+
+  <script src="Scripts/SolicitarCita.js"></script>
+</body>
+
+</html>
+
+
+
