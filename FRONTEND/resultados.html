@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resultados de Laboratorio - ACT Clínica</title>
+    <link rel="stylesheet" href="Assets/StyleResultadoLab.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-content">
+            <h1 class="logo">ACT Clínica</h1>
+            <nav class="nav">
+                <a href="index.html">Inicio</a>
+                <a href="#">Ayuda</a>
+                <a href="#">Contacto</a>
+                <a href="#">Nosotros</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="container">
+            <h2 class="page-title">Selecciona Pruebas</h2>
+            
+            <!-- Card de Resultados -->
+            <div class="results-card">
+                <h3 class="card-title">Mostrando Pruebas</h3>
+                
+                <!-- Mensaje cuando no hay resultados -->
+                <div id="noResultsMessage" class="no-results" style="display: none;">
+                    <svg class="icon-empty" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                    </svg>
+                    <p>No hay resultados disponibles en este momento</p>
+                    <small>Los resultados aparecerán aquí una vez que estén listos</small>
+                </div>
+
+                <!-- Tabla de Resultados -->
+                <div id="resultsTable" class="table-container">
+                    <table class="results-table">
+                        <thead>
+                            <tr>
+                                <th>Tipo de Examen</th>
+                                <th>Fecha</th>
+                                <th>Estado</th>
+                                <th>Acciones</th>
+                            </tr>
+                        </thead>
+                        <tbody id="resultsTableBody">
+                            <!-- Los resultados se cargarán dinámicamente aquí -->
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- Loading State -->
+                <div id="loadingState" class="loading-state">
+                    <div class="spinner"></div>
+                    <p>Cargando resultados...</p>
+                </div>
+            </div>
+
+            <!-- Botón Volver -->
+            <div class="actions">
+                <button class="btn-secondary" onclick="window.location.href='index.html'">
+                    Volver al Inicio
+                </button>
+            </div>
+        </div>
+    </main>
+
+    <!-- Modal de Error -->
+    <div id="errorModal" class="modal">
+        <div class="modal-content error-modal">
+            <div class="modal-icon error-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                    <circle cx="12" cy="12" r="10" stroke-width="2"/>
+                    <line x1="12" y1="8" x2="12" y2="12" stroke-width="2" stroke-linecap="round"/>
+                    <line x1="12" y1="16" x2="12.01" y2="16" stroke-width="2" stroke-linecap="round"/>
+                </svg>
+            </div>
+            <h3 id="errorTitle">Error al Cargar Resultados</h3>
+            <p id="errorMessage">No se pudieron cargar los resultados. Por favor, intente nuevamente.</p>
+            <button class="btn-primary" onclick="closeErrorModal()">Reintentar</button>
+        </div>
+    </div>
+
+    <script src="Scripts/Resultados.js"></script>
+</body>
+</html>
